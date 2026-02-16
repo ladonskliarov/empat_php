@@ -34,7 +34,7 @@ echo "</br>" . $tools[5];
 <?php
 // Асоціативний масив
 $associatedArray = ["Language:" => "Dart", "Framework:" => "Flutter"];
-foreach($associatedArray as $type => $tool) {
+foreach ($associatedArray as $type => $tool) {
     echo $type . " " . $tool;
 }
 ?>
@@ -49,7 +49,7 @@ echo $implodeV;
 ?>
 
 </br>
-<?php 
+<?php
 // Розіменування
 $city = "Kyiv";
 $Kyiv = "Capital";
@@ -57,7 +57,7 @@ echo $$city;
 ?>
 
 </br>
-<?php 
+<?php
 // Порівняння
 $comprasionV = 0;
 var_dump($comprasionV == "0");
@@ -75,7 +75,7 @@ var_dump($comprasionV2 !== "100");
 ?>
 
 </br>
-<?php 
+<?php
 echo 100 > 10;
 echo 10 < 100;
 echo 5 <=> 10;
@@ -84,7 +84,7 @@ echo 10 <=> 5;
 ?>
 
 </br>
-<?php 
+<?php
 $user = null;
 var_dump($user == "");
 var_dump($user == 0);
@@ -97,7 +97,7 @@ if ($user === null) {
 ?>
 
 </br>
-<?php 
+<?php
 // Кастування
 $castV = "10.5";
 var_dump((int)$castV);

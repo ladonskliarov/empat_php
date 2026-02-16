@@ -1,44 +1,54 @@
-<?php 
-trait Logger {
-    public function log($info) {
+<?php
+trait Logger
+{
+    public function log($info)
+    {
         echo "</br>Logging data about $info..";
     }
 }
 
-interface VideoGenerationInterface {
+interface VideoGenerationInterface
+{
     public function generateVideo($prompt);
 }
 
-class LanguageModel {
+class LanguageModel
+{
     protected $id;
 
-    public function __construct($id) {
+    public function __construct($id)
+    {
         $this->id = $id;
     }
 }
 
-class MoltBot extends LanguageModel implements VideoGenerationInterface {
+class MoltBot extends LanguageModel implements VideoGenerationInterface
+{
     use Logger;
     private static $instance = null;
     private string $hostedCenter;
 
-    private function __construct($id, $hostedCenter) {
+    private function __construct($id, $hostedCenter)
+    {
         parent::__construct($id);
         $this->hostedCenter = $hostedCenter;
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         return "I'm a MoltBot agent with id:{$this->id}" . " Hosted on: {$this->hostedCenter}.</br>";
     }
 
-    public static function getInstance($id, $hostedCenter) {
-        if(self::$instance === null) {
+    public static function getInstance($id, $hostedCenter)
+    {
+        if (self::$instance === null) {
             self::$instance = new MoltBot($id, $hostedCenter);
         }
         return self::$instance;
     }
 
-    public function generateVideo($prompt) {
+    public function generateVideo($prompt)
+    {
         echo "MoltBot:{$this->id} Generating video based on prompt: $prompt";
         $this->log('video generation');
     }
@@ -47,4 +57,3 @@ class MoltBot extends LanguageModel implements VideoGenerationInterface {
 $myModel = MoltBot::getInstance('10.001', 'Amazon Cloud Cervice');
 echo $myModel;
 $myModel->generateVideo('Make a nostalgic video about Skype times..');
-?>
