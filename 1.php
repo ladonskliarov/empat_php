@@ -35,7 +35,7 @@ echo "</br>" . $tools[5];
 // Асоціативний масив
 $associatedArray = ["Language:" => "Dart", "Framework:" => "Flutter"];
 foreach ($associatedArray as $type => $tool) {
-    echo $type . " " . $tool;
+    echo "</br>" . $type . " " . $tool;
 }
 ?>
 
@@ -76,8 +76,8 @@ var_dump($comprasionV2 !== "100");
 
 </br>
 <?php
-echo 100 > 10;
-echo 10 < 100;
+var_dump(100 > 10);
+var_dump(10 < 100);
 echo 5 <=> 10;
 echo 0 <=> 0;
 echo 10 <=> 5;
