@@ -26,23 +26,23 @@ class MoltBot extends LanguageModel implements VideoGenerationInterface
 {
     use Logger;
     private static $instance = null;
-    private string $hostedCenter;
+    private string $hosting;
 
-    private function __construct($id, $hostedCenter)
+    private function __construct($id, $hosting)
     {
         parent::__construct($id);
-        $this->hostedCenter = $hostedCenter;
+        $this->hosting = $hosting;
     }
 
     public function __toString()
     {
-        return "I'm a MoltBot agent with id:{$this->id}" . " Hosted on: {$this->hostedCenter}.</br>";
+        return "I'm a MoltBot agent with id:{$this->id}" . " Hosted on: {$this->hosting}.</br>";
     }
 
-    public static function getInstance($id, $hostedCenter)
+    public static function getInstance($id, $hosting)
     {
         if (self::$instance === null) {
-            self::$instance = new MoltBot($id, $hostedCenter);
+            self::$instance = new MoltBot($id, $hosting);
         }
         return self::$instance;
     }
@@ -54,6 +54,6 @@ class MoltBot extends LanguageModel implements VideoGenerationInterface
     }
 }
 
-$myModel = MoltBot::getInstance('10.001', 'Amazon Cloud Cervice');
+$myModel = MoltBot::getInstance('10.001', 'Amazon Cloud Service');
 echo $myModel;
 $myModel->generateVideo('Make a nostalgic video about Skype times..');

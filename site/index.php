@@ -29,9 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
     header("Location: index.php");
     exit;
-}
-
-if (Request::get('action') === 'logout') {
+} else if ($_SERVER['REQUEST_METHOD'] === 'GET' && Request::get('action') === 'logout') {
     session_destroy();
 
     header("Location: index.php");

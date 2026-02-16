@@ -90,9 +90,9 @@ var_dump($user == "");
 var_dump($user == 0);
 var_dump($user == false);
 if ($user === null) {
-    echo " User is null";
+    echo "</br> User is null";
 } else {
-    echo " User is available";
+    echo "</br> User is available";
 }
 ?>
 
